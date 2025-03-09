@@ -220,6 +220,21 @@ h1, h2 {
     100% { transform: translateX(0); }
 }
 
+/* Ajuste de tamaño en pantallas grandes (PC) */
+@media (min-width: 1024px) {
+    .carrusel-imagenes img, 
+    .video-galeria {
+        width: 15%;  /* Reducimos el tamaño en PC */
+        max-height: 250px; /* Limitamos la altura */
+    }
+}
+
+
+
+
+
+
+
 
 
 
