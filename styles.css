@@ -232,14 +232,6 @@ h1, h2 {
 
 
 
-
-
-
-
-
-
-
-
 /* Ajustar tamaño del iframe del formulario */
 #iframe-formulario {
     width: 100%;
@@ -256,4 +248,13 @@ h1, h2 {
     background: #111;
     border-radius: 10px;
     text-align: center;
+}
+
+/* Reducir el espacio entre la inscripción y la galería */
+.bienvenida {
+    margin-bottom: 20px; /* Antes era mayor, ahora queda más pegado */
+}
+
+.galeria {
+    margin-top: 10px; /* Hace que la galería suba más */
 }
