@@ -1,0 +1,244 @@
+/* Importar fuentes elegantes */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;700&display=swap');
+
+/* Estilo general */
+body {
+    font-family: 'Lora', serif;
+    background-color: #0A0A0A;
+    color: #EAEAEA;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fondo con efecto Parallax */
+#fondo-parallax {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(assets/viperfondo.webp) no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* 🔹 Capa oscura para reducir el brillo del fondo */
+#fondo-parallax::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajusta el valor de 0.5 para hacerlo más oscuro o más claro */
+    z-index: -1;
+}
+
+/* Sección de bienvenida */
+.bienvenida {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Recuadro semitransparente de bienvenida */
+.bienvenida-contenedor {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(164, 94, 229, 0.5);
+    max-width: 80%;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Texto con bordes iluminados */
+.bienvenida h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #A45EE5;
+    text-shadow: 0px 0px 10px rgba(164, 94, 229, 0.7);
+    margin-bottom: 10px;
+}
+
+/* Botón de inscripción */
+#boton-inscripcion {
+    background-color: #A45EE5;
+    color: #0A0A0A;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#boton-inscripcion:hover {
+    background-color: #E58BE5;
+    color: #EAEAEA;
+    box-shadow: 0px 0px 10px #A45EE5;
+}
+
+/* Estilo del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-contenido {
+    background-color: #111;
+    margin: 10% auto;
+    padding: 20px;
+    border: 2px solid #A45EE5;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Botón de cerrar modal */
+.cerrar {
+    color: #A45EE5;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    color: #E58BE5;
+}
+
+/* Pie de página */
+footer {
+    background: #111;
+    color: #EAEAEA;
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid #A45EE5;
+    font-size: 14px;
+}
+
+/* Enlaces en el footer */
+.footer-links a {
+    color: #A45EE5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #E58BE5;
+    text-shadow: 0px 0px 10px #A45EE5;
+}
+
+/* Estilo de títulos */
+h1, h2 {
+    font-family: 'Cinzel', serif;
+    animation: fadeIn 2s ease-in;
+}
+
+/* Animación de Fade-In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🔹 Sección de la galería */
+.galeria {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.galeria-contenedor {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(164, 94, 229, 0.5);
+    max-width: 90%;
+    width: 100%;
+}
+
+.galeria h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+    color: #A45EE5;
+    text-shadow: 0px 0px 10px rgba(164, 94, 229, 0.7);
+    margin-bottom: 20px;
+}
+
+/* 🔹 Carrusel */
+.carrusel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carrusel-imagenes {
+    display: flex;
+    width: 400%; /* 4 imágenes (ajusta según la cantidad) */
+    animation: desplazamiento 10s infinite linear;
+}
+
+.carrusel-imagenes img {
+    width: 25%; /* Cada imagen ocupa el 25% del contenedor */
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🖱 Efecto de zoom al pasar el mouse (solo en PC) */
+@media (min-width: 768px) {
+    .carrusel-imagenes img:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* 🔄 Animación del carrusel */
+@keyframes desplazamiento {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-25%); }
+    50% { transform: translateX(-50%); }
+    75% { transform: translateX(-75%); }
+    100% { transform: translateX(0); }
+}
+
+
+
+
+
+
+/* Ajustar tamaño del iframe del formulario */
+#iframe-formulario {
+    width: 100%;
+    height: 80vh; /* 80% de la altura de la pantalla */
+    border: none;
+}
+
+
+.modal-contenido {
+    width: 90%;
+    max-width: 700px; /* Ajusta el ancho máximo */
+    height: auto;
+    padding: 20px;
+    background: #111;
+    border-radius: 10px;
+    text-align: center;
+}
