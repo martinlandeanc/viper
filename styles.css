@@ -35,14 +35,21 @@ body {
     z-index: -1;
 }
 
-/* Sección de bienvenida */
 .bienvenida {
+    height: auto; /* Deja que se ajuste según el contenido */
+    min-height: 60vh; /* Reducimos la altura mínima para que no sea tan grande */
     display: flex;
     align-items: center;
     justify-content: center;
-    height: auto;    
-    text-align: center;
+    padding-bottom: 20px; /* Reduce el espacio en la parte inferior */
 }
+
+.galeria {
+    margin-top: -30px; /* Sube la galería más cerca del formulario */
+}
+
+
+
 
 /* Recuadro semitransparente de bienvenida */
 .bienvenida-contenedor {
